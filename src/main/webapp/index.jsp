@@ -8,9 +8,9 @@
 <body>
 <h2>Hello!</h2>
 <p>Trying to get Environment Variables, Brah?</p>
-<p><a href="vars">Get variables!</a></p>
-<a href="vars">
-    <button>Visit Google</button>
+<p><a href="variables.xhtml">JSF example</a></p>
+<a href="environment.jsp">
+    <button>JSP example</button>
 </a>
 </body>
 </html>

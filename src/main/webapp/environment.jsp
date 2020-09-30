@@ -1,13 +1,23 @@
-<jsp:useBean id="variables" scope="request" type="java.util.Map"/>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="org.example.app.client.EnvironmentClient" %><%
+    EnvironmentClient client = new EnvironmentClient();
+    Map<String, String> vars = client.call();
+    pageContext.setAttribute("vars", vars.entrySet());
+%>
 <html lang="en">
 <head>
     <title>Title</title>
 </head>
 <body>
-<c:forEach items="${variables}" var="entry">
-    Key = ${entry.key}, value = ${entry.value}<br>
-</c:forEach>
+<table border = "1">
+    <c:forEach var="entry" items="${vars}" >
+    <tr>
+        <td>${entry.key}</td>
+        <td>${entry.value}</td>
+
+    </tr>
+    </c:forEach>
 </body>
 </html>
