@@ -10,6 +10,10 @@ import java.util.Map;
 @Named("environmentClient")
 public class EnvironmentClient {
 
+    /**
+     * collects Map with all variables provided by service
+     * @return = Map filled with variables and its values
+     */
     public Map<String, String> call() {
         Client client = ClientBuilder.newClient();
         Map<String, String> map = client
